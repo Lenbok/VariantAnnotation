@@ -185,7 +185,7 @@
             df <- DataFrame(ID = rownames(df), df)
         .pasteMultiFieldDF(df, nms)
     ## 'simple' key-value pairs
-    } else if(ncol(df) == 1L && nrow(df) == 1L) {
+    } else if(ncol(df) == 1L && nrow(df) == 1L && nms != "FILTER" && nms != "contig") {
         if (nms == "fileDate") {
             fd <- format(Sys.time(), "%Y%m%d")
             paste("##fileDate=", fd, sep="")
